@@ -1,0 +1,59 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+&out OUT_USB
+
+#define NONE 0
+#define BLUE 1
+#define ORANGE 2
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+
+            bindings = <
+           
+    &kp E 	&kp F   &kp B 		&kp I 	&kp L 		&kp N 		&kp G
+    &kp W 	&kp A   &kp LCTRL 	&kp U 	&kp SEMI 	&kp LALT 	&kp N
+    &kp R 	&kp G   &kp LGUI 	&kp O 	&kp H 		&kp MINUS 	&kp U
+    &kp Q 	&kp C   &kp TAB 	&kp P 	&kp COMMA 	&tog BLUE 	&kp N2 
+    &kp T 	&kp X   &kp LSHIFT 	&kp Y 	&kp M 		&kp SQT 	&kp N9
+    &kp D 	&kp V   &kp ESC 	&kp K 	&kp DOT 	&kp ENTER 	&kp S
+    &kp S   &kp Z   &kp BACKSPACE 	&kp J 	&kp SLASH 	&kp SPACE 	&kp DOWN 
+	>;
+        };
+        
+	
+	blue_layer {
+
+           bindings = <
+    &kp UP 	    &kp RIGHT           &kp RIGHT_BRACE &kp N8   	  &kp N6            &kp ASTERISK &kp RPAR 
+    &kp AT 	    &kp LPAR            &kp LCTRL        &kp N7             &kp SEMI          &kp LALT     &kp ASTERISK 
+    &kp DOLLAR      &kp RPAR            &kp LGUI        &kp N9             &kp PAGE_DOWN     &kp DOT      &kp N7
+    &kp EXCLAMATION &kp POUND           &kp INSERT      &kp BACKSPACE     &kp N2            &tog BLUE    &none 
+    &kp PERCENT     &kp RIGHT_BRACKET   &kp LSHIFT      &kp PAGE_UP       &kp N1            &kp N0       &none
+    &kp DOWN        &kp LEFT_BRACE      &mo ORANGE      &kp N5            &kp N3            &kp EQUAL    &none
+    &kp N2          &kp LEFT_BRACKET    &kp BACKSPACE   &kp N4            &kp PLUS          &kp SPACE    &none
+            >;
+
+        };
+            
+        orange_layer {
+
+            bindings = <
+    &kp E 		&kp BACKSLASH   &kp B 			&kp F8 		&kp F6 		&kp N 		&kp PAGE_DOWN
+    &kp HOME 		&kp DEL   	&kp LCTRL 		&kp F7 		&kp F11 	&kp LALT 	&kp N
+    &kp END 		&kp PAGE_DOWN  	&kp LGUI 		&kp F9 		&kp DOWN	&kp PRINTSCREEN	&kp F7
+    &kp INS 		&reset   	&kp C_VOLUME_DOWN 	&kp F10 	&kp F2 		&tog BLUE 	&none 
+    &kp PAGE_UP 	&kp C_VOLUME_UP &kp LSHIFT 		&kp UP 		&kp F1 		&kp SCROLLLOCK 	&none
+    &kp GRAVE 		&kp V   	&mo ORANGE	 		&kp F5 		&kp F3  	&kp ENTER 	&none
+    &kp COMMA   	&kp Z   	&kp BACKSPACE 		&kp F4 		&kp F12 	&kp SPACE 	&none 
+            >;
+
+        };
+
+    };
+};
